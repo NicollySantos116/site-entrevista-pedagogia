@@ -20,6 +20,7 @@ body {
   overflow-x: hidden;
 }
 
+/* ===== NAVBAR ===== */
 .navbar {
   background-color: rgba(255, 255, 255, 0.85);
   display: flex;
@@ -70,6 +71,7 @@ nav a:hover {
   -webkit-text-fill-color: transparent;
 }
 
+/* ===== HERO PRINCIPAL (Carreira) ===== */
 .hero {
   background: var(--gradiente);
   color: white;
@@ -147,9 +149,9 @@ nav a:hover {
   transform: translateY(-3px);
 }
 
-/* Importância */
+/* ===== IMPORTÂNCIA DA EDUCAÇÃO ===== */
 .importancia {
-  background: rgba(247, 250, 255, 0.9); /* Fundo mais suave */
+  background: rgba(247, 250, 255, 0.9);
   text-align: center;
   padding: 100px 20px;
 }
@@ -176,7 +178,7 @@ nav a:hover {
   line-height: 1.7;
 }
 
-/* Cards */
+/* ===== CARDS ===== */
 .cards {
   display: flex;
   justify-content: center;
@@ -185,7 +187,7 @@ nav a:hover {
 }
 
 .card {
-  background: rgba(255, 255, 255, 0.9); /* Fundo mais suave */
+  background: rgba(255, 255, 255, 0.9);
   border-radius: 20px;
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
   padding: 40px 30px;
@@ -222,12 +224,189 @@ nav a:hover {
   color: #555;
 }
 
-/* Footer */
-footer {
+/* ===== INSPIRE-SE COM NOSSA ENTREVISTA ===== */
+.hero-interview {
   background: var(--gradiente);
   color: white;
   text-align: center;
-  padding: 20px;
-  margin-top: 80px;
+  padding: 120px 20px;
+  position: relative;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  margin-bottom: 80px; /* espaço entre a seção e o rodapé */
+}
+
+.hero-interview-inner {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.hero-interview .badge {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 30px;
+}
+
+.badge-icon {
+  background: rgba(255, 255, 255, 0.2);
+  padding: 18px;
+  border-radius: 20px;
+}
+
+.hero-interview h1 {
+  font-family: var(--fonte-titulo);
+  font-size: 2.8rem;
+  margin-bottom: 20px;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+}
+
+.hero-sub {
+  font-size: 1.1rem;
+  max-width: 600px;
+  margin: 0 auto 40px;
+  line-height: 1.7;
+  opacity: 0.95;
+}
+
+.cta-hero {
+  background: white;
+  color: var(--rosa-escuro);
+  padding: 14px 28px;
+  border-radius: 40px;
+  text-decoration: none;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(255, 255, 255, 0.3);
+}
+
+.cta-hero:hover {
+  background: #ffe3ee;
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(255, 255, 255, 0.4);
+}
+
+/* ===== FOOTER ===== */
+footer {
+  background: linear-gradient(135deg, #f56ca8, #f53d6b);
+  color: white;
+  padding: 60px 80px 30px;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* Container principal das colunas */
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 40px;
+  margin-bottom: 40px;
+}
+
+/* Cada coluna */
+.footer-col {
+  flex: 1;
+  min-width: 220px;
+}
+
+/* Logo + nome */
+.footer-logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.footer-logo .icon {
+  background: rgba(255, 255, 255, 0.2);
+  padding: 8px;
+  border-radius: 10px;
+}
+
+.footer-logo h3 {
+  font-weight: 700;
+  font-size: 1.2rem;
+}
+
+/* Texto */
+footer p {
   font-size: 0.9rem;
+  line-height: 1.6;
+  opacity: 0.9;
+}
+
+/* Títulos das colunas */
+.footer-col h4 {
+  font-weight: 700;
+  margin-bottom: 12px;
+  font-size: 1rem;
+}
+
+/* Navegação */
+.footer-col ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-col ul li {
+  margin-bottom: 8px;
+}
+
+.footer-col ul li a {
+  color: white;
+  text-decoration: none;
+  opacity: 0.85;
+  transition: all 0.3s ease;
+}
+
+.footer-col ul li a:hover {
+  opacity: 1;
+  text-decoration: underline;
+}
+
+/* Ícones sociais */
+.social-icons {
+  display: flex;
+  gap: 15px;
+}
+
+.social-icons a {
+  color: white;
+  background: rgba(255, 255, 255, 0.15);
+  padding: 8px;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+.social-icons a:hover {
+  background: rgba(255, 255, 255, 0.3);
+  transform: translateY(-3px);
+}
+
+/* Linha inferior */
+.footer-bottom {
+  text-align: center;
+  border-top: 1px solid rgba(255, 255, 255, 0.3);
+  padding-top: 20px;
+  font-size: 0.85rem;
+  opacity: 0.9;
+}
+
+/* Responsividade */
+@media (max-width: 800px) {
+  .footer-container {
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+  }
+
+  .footer-col {
+    min-width: 100%;
+  }
+
+  .social-icons {
+    justify-content: center;
+  }
 }
