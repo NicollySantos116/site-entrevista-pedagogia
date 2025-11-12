@@ -1,16 +1,404 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Sobre - Profissão do Futuro</title>
-  <link rel="stylesheet" href="../css/style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sobre a Educadora - Profissão do Futuro</title>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
   <script src="https://unpkg.com/lucide@latest"></script>
-  <script src="../js/script.js" defer></script>
-</head>
-<body>
 
+  <style>
+    :root {
+      --rosa-escuro: #e83e8c;
+      --rosa-claro: #ffb6d9;
+      --gradiente: linear-gradient(135deg, #ff4b91, #f85f91, #fa9eb8);
+      --fundo: #fff9fc;
+      --fonte-titulo: 'Playfair Display', serif;
+      --fonte-texto: 'Inter', sans-serif;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: var(--fonte-texto);
+      color: #333;
+      background-color: var(--fundo);
+      overflow-x: hidden;
+    }
+
+    /* ===== NAVBAR ===== */
+    .navbar {
+      background-color: rgba(255, 255, 255, 0.95);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 15px 60px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .logo .icon {
+      background: var(--gradiente);
+      color: white;
+      padding: 8px;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .logo .icon svg {
+      width: 22px;
+      height: 22px;
+    }
+
+    .logo h1 {
+      font-weight: 700;
+      color: var(--rosa-escuro);
+      font-size: 1.3rem;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 25px;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #333;
+      font-weight: 500;
+      transition: 0.3s;
+    }
+
+    nav a.active,
+    nav a:hover {
+      color: var(--rosa-escuro);
+    }
+
+    /* ===== EDUCADORA ===== */
+    .educadora-section {
+      padding: 100px 10%;
+      background: #fff;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+      gap: 50px;
+      margin-bottom: 80px;
+    }
+
+    .educadora-img img {
+      width: 350px;
+      border-radius: 20px;
+      box-shadow: 0 10px 25px rgba(255, 77, 150, 0.3);
+      transition: 0.4s;
+    }
+
+    .educadora-img img:hover {
+      transform: scale(1.03);
+    }
+
+    .educadora-texto {
+      max-width: 550px;
+    }
+
+    .educadora-texto h2 {
+      font-family: var(--fonte-titulo);
+      font-size: 2.4rem;
+      color: var(--rosa-escuro);
+      margin-bottom: 20px;
+    }
+
+    .educadora-texto p {
+      color: #555;
+      font-size: 1.05rem;
+      line-height: 1.8;
+      margin-bottom: 15px;
+    }
+
+    blockquote {
+      background: #ffeaf4;
+      border-left: 4px solid var(--rosa-escuro);
+      padding: 15px 20px;
+      border-radius: 10px;
+      font-style: italic;
+      color: #444;
+      margin-top: 15px;
+    }
+
+    /* ===== CITAÇÃO ===== */
+    .citacao {
+      background: var(--gradiente);
+      color: white;
+      text-align: center;
+      padding: 80px 20px;
+      font-size: 1.4rem;
+      font-family: var(--fonte-titulo);
+      box-shadow: 0 -5px 15px rgba(0,0,0,0.1);
+      margin-bottom: 80px;
+    }
+
+    .citacao span {
+      display: block;
+      font-size: 1rem;
+      margin-top: 10px;
+      opacity: 0.9;
+    }
+
+    /* ===== FORMAÇÃO ===== */
+    .formacao-academica {
+      text-align: center;
+      padding: 90px 20px;
+      background: #fff;
+      margin-bottom: 80px;
+    }
+
+    .formacao-academica h2 {
+      font-family: var(--fonte-titulo);
+      font-size: 2.3rem;
+      color: var(--rosa-escuro);
+      margin-bottom: 10px;
+    }
+
+    .formacao-academica p {
+      color: #555;
+      margin-bottom: 60px;
+    }
+
+    .cards-formacao {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 40px;
+    }
+
+    .card-formacao {
+      background: white;
+      border-radius: 20px;
+      box-shadow: 0 10px 25px rgba(255, 77, 150, 0.15);
+      padding: 35px 30px;
+      width: 280px;
+      text-align: center;
+      transition: 0.35s;
+    }
+
+    .card-formacao:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 10px 25px rgba(255, 77, 150, 0.35);
+    }
+
+    .card-formacao .icon {
+      background: var(--gradiente);
+      width: 55px;
+      height: 55px;
+      border-radius: 12px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: white;
+      margin: 0 auto 15px;
+    }
+
+    .card-formacao .icon svg {
+      width: 26px;
+      height: 26px;
+    }
+
+    /* ===== ÁREAS DE ATUAÇÃO ===== */
+    .areas-atuacao {
+      background: #fff6fb;
+      text-align: center;
+      padding: 90px 20px;
+      margin-bottom: 80px;
+    }
+
+    .areas-atuacao h2 {
+      font-family: var(--fonte-titulo);
+      color: var(--rosa-escuro);
+      font-size: 2.3rem;
+      margin-bottom: 10px;
+    }
+
+    .areas-atuacao p {
+      color: #555;
+      margin-bottom: 60px;
+    }
+
+    .cards-atuacao {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 40px;
+      justify-items: center;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .card-atuacao {
+      background: white;
+      border-radius: 20px;
+      padding: 35px 30px;
+      width: 90%;
+      max-width: 350px;
+      text-align: left;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+      transition: 0.3s;
+    }
+
+    .card-atuacao:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 25px rgba(255, 77, 150, 0.25);
+    }
+
+    .card-atuacao .icon {
+      background: var(--gradiente);
+      width: 50px;
+      height: 50px;
+      border-radius: 10px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: white;
+      margin-bottom: 15px;
+    }
+
+    .card-atuacao .icon svg {
+      width: 24px;
+      height: 24px;
+    }
+
+    /* ===== MOTIVAÇÃO ===== */
+    .motivacao {
+      background: var(--gradiente);
+      color: white;
+      text-align: center;
+      padding: 100px 20px;
+      margin-bottom: 80px;
+    }
+
+    .motivacao h2 {
+      font-family: var(--fonte-titulo);
+      font-size: 2.3rem;
+      margin-bottom: 50px;
+    }
+
+    .cards-motivacao {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 40px;
+    }
+
+    .card-motivacao {
+      background: rgba(255,255,255,0.15);
+      border-radius: 20px;
+      width: 270px;
+      padding: 35px 25px;
+      transition: 0.3s;
+    }
+
+    .card-motivacao:hover {
+      transform: translateY(-5px);
+      background: rgba(255,255,255,0.25);
+    }
+
+    .card-motivacao .icon {
+      background: rgba(255,255,255,0.25);
+      width: 55px;
+      height: 55px;
+      border-radius: 12px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: 0 auto 15px;
+    }
+
+    .card-motivacao .icon svg {
+      width: 26px;
+      height: 26px;
+    }
+
+    /* ===== FOOTER ===== */
+    footer {
+      background: linear-gradient(135deg, #f56ca8, #f53d6b);
+      color: white;
+      padding: 60px 80px 30px;
+    }
+
+    .footer-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      flex-wrap: wrap;
+      gap: 40px;
+      margin-bottom: 40px;
+    }
+
+    .footer-logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .footer-logo .icon {
+      background: rgba(255,255,255,0.25);
+      width: 45px;
+      height: 45px;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .footer-logo .icon svg {
+      width: 22px;
+      height: 22px;
+    }
+
+    .social-icons {
+      display: flex;
+      gap: 15px;
+    }
+
+    .social-icons a {
+      background: rgba(255,255,255,0.25);
+      padding: 8px;
+      border-radius: 8px;
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: 0.3s;
+    }
+
+    .social-icons a:hover {
+      background: rgba(255,255,255,0.4);
+    }
+
+    .social-icons a svg {
+      width: 22px;
+      height: 22px;
+    }
+
+    .footer-bottom {
+      text-align: center;
+      border-top: 1px solid rgba(255,255,255,0.3);
+      padding-top: 20px;
+      font-size: 0.85rem;
+    }
+  </style>
+</head>
+
+<body>
   <header class="navbar">
     <div class="logo">
       <div class="icon"><i data-lucide="graduation-cap"></i></div>
@@ -21,52 +409,114 @@
         <li><a href="../../index.html">Início</a></li>
         <li><a href="./sobre.html" class="active">Sobre</a></li>
         <li><a href="./formacao.html">Formação</a></li>
+        <li><a href="#">Contato</a></li>
       </ul>
     </nav>
   </header>
 
-  <section class="sobre-section">
-    <div class="sobre-texto">
-      <h2>Sobre a Entrevistada</h2>
-      <p>
-        Nesta seção, conheça a trajetória pessoal e profissional da pedagoga entrevistada.
-        Sua jornada inspira pela dedicação, amor ao ensino e compromisso com o futuro da educação.
-      </p>
-      <p>
-        Desde o início da carreira, ela acredita que cada aluno possui um potencial único.
-        Através de metodologias inovadoras e empatia, ela transforma a sala de aula em um espaço de descobertas e crescimento.
-      </p>
-      <a href="./formacao.html" class="btn-sobre">Conheça sua Formação</a>
+  <section class="educadora-section">
+    <div class="educadora-img">
+      <img src="../img/entrevistada.png" alt="Professora Tainá Cristini Chicão">
     </div>
-
-    <div class="sobre-img">
-      <img src="../img/entrevistada.png" alt="Foto da entrevistada">
+    <div class="educadora-texto">
+      <h2>Sobre a Educadora</h2>
+      <p>Tainá Cristini Chicão, 30 anos, é pedagoga formada pela UNICAMP. Atua na Rede Decisão com paixão pela Educação Infantil e acredita que educar é transformar e ser transformado.</p>
+      <p>Com empatia e dedicação, busca inspirar seus alunos e contribuir para um futuro mais humano e consciente.</p>
+      <blockquote>“Educar é um ato de amor, por isso, um ato de coragem.” — Paulo Freire</blockquote>
     </div>
   </section>
 
-  <section class="sobre-chamada">
-    <h3>Educar é inspirar o futuro</h3>
-    <p>
-      “A educação é o ato mais poderoso de transformação. A cada aluno que aprende, uma nova esperança nasce.”
-    </p>
+  <div class="citacao">
+    "A educação é o ato mais poderoso de transformação."
+    <span> — Paulo Freire</span>
+  </div>
+
+  <section class="formacao-academica">
+    <h2>Formação Acadêmica</h2>
+    <p>Uma trajetória guiada pela dedicação e amor ao ensino.</p>
+    <div class="cards-formacao">
+      <div class="card-formacao">
+        <div class="icon"><i data-lucide="graduation-cap"></i></div>
+        <h4>Graduação</h4>
+        <p>Pedagogia - UNICAMP</p>
+      </div>
+      <div class="card-formacao">
+        <div class="icon"><i data-lucide="book-open"></i></div>
+        <h4>Especialização</h4>
+        <p>Psicopedagogia - PUC-SP</p>
+      </div>
+      <div class="card-formacao">
+        <div class="icon"><i data-lucide="book"></i></div>
+        <h4>Mestrado</h4>
+        <p>Educação Infantil - UNICAMP</p>
+      </div>
+    </div>
   </section>
 
-  <footer>
+  <section class="areas-atuacao">
+    <h2>Áreas de Atuação</h2>
+    <p>Experiência diversificada em diferentes níveis e modalidades de ensino.</p>
+    <div class="cards-atuacao">
+      <div class="card-atuacao">
+        <div class="icon"><i data-lucide="heart"></i></div>
+        <h4>Educação Infantil</h4>
+        <p>Dedicação ao desenvolvimento integral de crianças, com foco na alfabetização e socialização.</p>
+      </div>
+      <div class="card-atuacao">
+        <div class="icon"><i data-lucide="users"></i></div>
+        <h4>Coordenação Pedagógica</h4>
+        <p>Liderança e formação de equipes educacionais.</p>
+      </div>
+      <div class="card-atuacao">
+        <div class="icon"><i data-lucide="book-open"></i></div>
+        <h4>Educação Inclusiva</h4>
+        <p>Atendimento especializado para promover equidade e inclusão.</p>
+      </div>
+      <div class="card-atuacao">
+        <div class="icon"><i data-lucide="lightbulb"></i></div>
+        <h4>Formação Continuada</h4>
+        <p>Inspiração e aprimoramento constante para educadores.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="motivacao">
+    <h2>O que me Motiva</h2>
+    <div class="cards-motivacao">
+      <div class="card-motivacao">
+        <div class="icon"><i data-lucide="heart"></i></div>
+        <h4>Amor ao Ensino</h4>
+        <p>Acreditar no poder da educação e na transformação de vidas.</p>
+      </div>
+      <div class="card-motivacao">
+        <div class="icon"><i data-lucide="users"></i></div>
+        <h4>Impacto Social</h4>
+        <p>Construir um futuro melhor por meio da formação de cidadãos.</p>
+      </div>
+      <div class="card-motivacao">
+        <div class="icon"><i data-lucide="book"></i></div>
+        <h4>Aprendizado Contínuo</h4>
+        <p>Aprender com cada aluno, renovando o propósito de ensinar.</p>
+      </div>
+    </div>
+  </section>
+
+<footer>
     <div class="footer-container">
       <div class="footer-col">
         <div class="footer-logo">
           <div class="icon"><i data-lucide="graduation-cap"></i></div>
           <h3>Profissão do Futuro</h3>
         </div>
-        <p>Histórias que inspiram e valorizam o papel essencial do educador.</p>
+        <p>Valorizando a carreira docente através de histórias inspiradoras de educadores dedicados que transformam vidas.</p>
       </div>
 
       <div class="footer-col">
         <h4>Navegação</h4>
         <ul>
-          <li><a href="../../iindex.html">Início</a></li>
-          <li><a href="./sobre.html">Sobre</a></li>
-          <li><a href="./formacao.html">Formação</a></li>
+          <li><a href="./index.html">Início</a></li>
+          <li><a href="./assets/pages/sobre.html">Sobre</a></li>
+          <li><a href="./assets/pages/formacao.html">Formação</a></li>
           <li><a href="#">Entrevista</a></li>
           <li><a href="#">Contato</a></li>
         </ul>
