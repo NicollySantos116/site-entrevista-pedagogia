@@ -535,25 +535,22 @@ footer p {
     transform: translateX(-50%);
   }
 }
-/* Espaçamento entre última seção e o rodapé */
 .motivacao {
   background: linear-gradient(135deg, #f64b91, #f75c9c, #fa7dab);
   text-align: center;
   color: white;
-  padding: 100px 20px 140px; /* Aumentei o bottom */
+  padding: 100px 20px 140px;
   border-bottom: 1px solid rgba(255, 255, 255, 0.2);
 }
 
-/* Espaço antes do rodapé */
 footer {
-  margin-top: 80px; /* Novo espaçamento */
+  margin-top: 80px;
   background: linear-gradient(135deg, #f04c8f, #ee3f78);
   color: white;
   padding: 80px 60px 40px;
   text-align: left;
 }
 
-/* Ajuste visual dos ícones e colunas */
 .footer-container {
   display: flex;
   justify-content: space-between;
@@ -570,4 +567,9 @@ footer {
   font-size: 0.9rem;
   opacity: 0.9;
   margin-top: 30px;
+}
+
+.hero-texto {
+  text-align: center;
+  width: 100%;
 }
