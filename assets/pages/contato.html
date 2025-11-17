@@ -31,7 +31,7 @@
       color: #333;
     }
 
-    /* === NAVBAR PADRONIZADA === */
+    /* === NAVBAR === */
     .navbar {
       background-color: rgba(255, 255, 255, 0.95);
       display: flex;
@@ -188,7 +188,7 @@
       transform: scale(1.02);
     }
 
-    /* === FOOTER PADRONIZADO === */
+    /* === FOOTER === */
     footer {
       background: linear-gradient(135deg, #f56ca8, #f53d6b);
       color: white;
@@ -256,62 +256,61 @@
 
 <body>
 
-    <header class="navbar">
-        <div class="logo">
-          <div class="icon"><i data-lucide="graduation-cap"></i></div>
-          <h1>Profissão do Futuro</h1>
-        </div>
-        <nav>
+<header class="navbar">
+  <div class="logo">
+    <div class="icon"><i data-lucide="graduation-cap"></i></div>
+    <h1>Profissão do Futuro</h1>
+  </div>
 
-    <nav>
-      <ul>
-        <li><a href="../../index.html">Início</a></li>
-        <li><a href="./sobre.html">Sobre</a></li>
-        <li><a href="./entrevista.html">Entrevista</a></li>
-        <li><a href="./contato.html" class="active">Contato</a></li>
-      </ul>
-    </nav>
-  </header>
+  <nav>
+    <ul>
+      <li><a href="../../index.html">Início</a></li>
+      <li><a href="./sobre.html">Sobre</a></li>
+      <li><a href="./entrevista.html">Entrevista</a></li>
+      <li><a href="./contato.html" class="active">Contato</a></li>
+    </ul>
+  </nav>
+</header>
 
-  <section class="contato-container">
+<section class="contato-container">
 
-    <div class="contato-info">
-      <h2>Entre em Contato</h2>
-      <p>Tem alguma dúvida, sugestão ou deseja contribuir com o projeto? Fale comigo! Será um prazer responder.</p>
+  <div class="contato-info">
+    <h2>Entre em Contato</h2>
+    <p>Tem alguma dúvida, sugestão ou deseja contribuir com o projeto? Fale comigo! Será um prazer responder.</p>
 
-      <div class="info-box">
-        <div class="icon"><i data-lucide="mail"></i></div>
-        <p>nicolly1606@gmail.com</p>
-      </div>
-
-      <div class="info-box">
-        <div class="icon"><i data-lucide="instagram"></i></div>
-        <p>_saantos.nick_</p>
-      </div>
-
-      <div class="info-box">
-        <div class="icon"><i data-lucide="map-pin"></i></div>
-        <p>Valinhos, São Paulo</p>
-      </div>
+    <div class="info-box">
+      <div class="icon"><i data-lucide="mail"></i></div>
+      <p>nicolly1606@gmail.com</p>
     </div>
 
-    <form>
-      <label>Seu nome</label>
-      <input type="text" placeholder="Digite seu nome" required>
+    <div class="info-box">
+      <div class="icon"><i data-lucide="instagram"></i></div>
+      <p>_saantos.nick_</p>
+    </div>
 
-      <label>Email</label>
-      <input type="email" placeholder="Digite seu email" required>
+    <div class="info-box">
+      <div class="icon"><i data-lucide="map-pin"></i></div>
+      <p>Valinhos, São Paulo</p>
+    </div>
+  </div>
 
-      <label>Mensagem</label>
-      <textarea rows="6" placeholder="Escreva sua mensagem" required></textarea>
+  <!-- ===== FORMULÁRIO COM FORMSPREE ===== -->
+  <form action="https://formspree.io/f/mblqejrg" method="POST">
+    <label>Seu nome</label>
+    <input type="text" name="nome" placeholder="Digite seu nome" required>
 
-      <button type="submit">Enviar Mensagem</button>
-    </form>
+    <label>Email</label>
+    <input type="email" name="email" placeholder="Digite seu email" required>
 
-  </section>
+    <label>Mensagem</label>
+    <textarea name="message" rows="6" placeholder="Escreva sua mensagem" required></textarea>
+
+    <button type="submit">Enviar Mensagem</button>
+  </form>
 
 </section>
->   <footer>
+
+<footer>
   <div class="footer-container">
     <div class="footer-col">
       <div class="footer-logo">
@@ -325,7 +324,7 @@
       <h4>Navegação</h4>
       <ul>
         <li><a href="../../index.html">Início</a></li>
-        <li><a href="./sobre.html" class="active">Sobre</a></li>
+        <li><a href="./sobre.html">Sobre</a></li>
         <li><a href="./entrevista.html">Entrevista</a></li>
         <li><a href="./contato.html">Contato</a></li>
       </ul>
@@ -350,5 +349,6 @@
 <script>
   lucide.createIcons();
 </script>
+
 </body>
 </html>
